@@ -1,0 +1,16 @@
+$(LINUX_ONLY)#!${INSTALL}/bin/${ARCH}/pr-mk-IOC
+
+cd ${INSTALL}
+
+## Register all support components
+dbLoadDatabase("dbd/pr-mk-IOC.dbd")
+pr_mk_IOC_registerRecordDeviceDriver(pdbbase)
+
+## Load record instances
+#dbLoadTemplate("db/pr-mk-IOC.substitutions")
+#dbLoadRecords("db/pr-mk-IOC.db", "user=tcumming")
+
+iocInit
+
+## Start any sequence programs
+#seq(sncxxx, "user=tcumming")
