@@ -1,14 +1,21 @@
 $(LINUX_ONLY)#!${INSTALL}/bin/${ARCH}/pr-mk-IOC
 
 cd ${INSTALL}
+epicsEnvSet("IOCSH_PS1","pr-mk-ioc> ")
 
 ## Register all support components
 dbLoadDatabase("dbd/pr-mk-IOC.dbd")
 pr_mk_IOC_registerRecordDeviceDriver(pdbbase)
 
+## Load PLC scan tables
+devMgrInit "data/prplc.cfg"
+
 ## Load record instances
-#dbLoadTemplate("db/pr-mk-IOC.substitutions")
-#dbLoadRecords("db/pr-mk-IOC.db", "user=tcumming")
+dbLoadRecords "db/pr-mk-IOC.db"
+#dbLoadRecords("db/iocAdminSoft.db"," IOC=pr:iocStats,TODFORMAT=%m/%d/%Y %H:%M:%S")
+
+ornlPLC5ShowMsgs 1
+ornlPLC5DebugOn 3
 
 iocInit
 

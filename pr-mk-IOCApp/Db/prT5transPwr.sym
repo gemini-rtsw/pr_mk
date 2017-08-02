@@ -1,0 +1,40 @@
+[symbol2]
+bbox -496 -384 0 608
+uniq 0
+[tools]
+[attributes]
+p -464 480 100 0 -1 set1:dev device name
+p -464 432 100 0 -1 seta:freq word addr
+p -464 400 100 0 -1 setb:ph_volt_1 word addr
+p -464 368 100 0 -1 setc:ph_volt_2 word addr
+p -464 336 100 0 -1 setd:ph_volt_3 word addr
+p -464 304 100 0 -1 sete:ph_volt_av word addr
+p -464 272 100 0 -1 setf:line_volt_1 word addr
+p -464 240 100 0 -1 setg:line_volt_2 word addr
+p -464 208 100 0 -1 seth:line_volt_3 word addr
+p -464 176 100 0 -1 seti:line_volt_av word addr
+p -464 144 100 0 -1 setj:ph_curr_1 word addr
+p -464 112 100 0 -1 setk:ph_curr_2 word addr
+p -464 80 100 0 -1 setl:ph_curr_3 word addr
+p -464 48 100 0 -1 setm:ph_curr_av word addr
+p -464 16 100 0 -1 setn:neutral_curr word addr
+p -464 -16 100 0 -1 seto:real_pwr_1 word addr
+p -464 -48 100 0 -1 setp:real_pwr_2 word addr
+p -464 -80 100 0 -1 setq:real_pwr_3 word addr
+p -464 -112 100 0 -1 setr:real_pwr_tot word addr
+p -464 -144 100 0 -1 sets:app_pwr_1 word addr
+p -464 -176 100 0 -1 sett:app_pwr_2 word addr
+p -464 -208 100 0 -1 setu:app_pwr_3 word addr
+p -464 -240 100 0 -1 setv:app_pwr_tot word addr
+p -464 -272 100 0 -1 setw:pwr_factor_1 word addr
+p -464 -304 100 0 -1 setx:pwr_factor_2 word addr
+p -464 -336 100 0 -1 sety:pwr_factor_3 word addr
+p -464 -368 100 0 -1 setz:pwr_factor_sys word addr
+[layers]
+<symbol>
+l 120 0 0 -480 576 T5 Transformer Power Monitoring
+l 100 0 0 -320 528 PLC Interface
+l 100 0 0 -144 480 prT5transPwr
+r 0 -496 -384 0 512
+r 0 -496 512 0 608
+[comments]

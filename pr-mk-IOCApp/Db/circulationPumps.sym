@@ -1,0 +1,11 @@
+[symbol2]
+bbox -16 32 352 272
+uniq 251
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 128 48 circulationPumps
+l 150 7 0 176 192 Circulation Pumps
+r 0 -16 32 352 272
+[comments]

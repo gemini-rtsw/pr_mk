@@ -1,0 +1,14 @@
+[symbol2]
+bbox 32 32 448 288
+uniq 1313
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 304 48 ecsTransfer
+l 100 0 0 48 256 Transfer Generator Power to ECS
+r 0 32 32 448 288
+v 0 32 240
+448 240
+_
+[comments]

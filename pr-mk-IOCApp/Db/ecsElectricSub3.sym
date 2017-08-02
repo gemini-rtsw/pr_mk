@@ -1,0 +1,18 @@
+[symbol2]
+bbox 32 32 352 288
+uniq 1297
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 80 64 ecsElectricSub3 Max
+r 0 32 32 352 288
+v 0 96 256
+176 208
+176 240
+272 144
+192 192
+192 160
+96 256
+_
+[comments]

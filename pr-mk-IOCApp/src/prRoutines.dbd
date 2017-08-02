@@ -1,0 +1,3 @@
+registrar( prAhuLibRegistrar )
+registrar( prTransferLibRegistrar )
+registrar( prHbLibRegistrar )

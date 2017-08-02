@@ -1,0 +1,11 @@
+[symbol2]
+bbox -64 32 400 240
+uniq 251
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 150 7 0 176 192 Device Power Monitoring
+l 100 0 0 128 48 devicePowerMonitoring
+r 0 -64 32 400 240
+[comments]

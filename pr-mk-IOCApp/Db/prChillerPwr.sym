@@ -1,0 +1,37 @@
+[symbol2]
+bbox -496 -352 0 608
+uniq 0
+[tools]
+[attributes]
+p -464 480 100 0 -1 set1:dev device name
+p -464 432 100 0 -1 set2:energy_LSR word addr
+p -464 400 100 0 -1 seta:energy_MSR word addr
+p -464 368 100 0 -1 setb:tot_real_pwr word addr
+p -464 304 100 0 -1 setd:tot_app_pwr word addr
+p -464 272 100 0 -1 sete:tot_pwr_factor word addr
+p -464 240 100 0 -1 setf:voltage_L-L word addr
+p -464 208 100 0 -1 setg:voltage_L-N word addr
+p -464 176 100 0 -1 seth:current word addr
+p -464 144 100 0 -1 seti:real_pwr_A word addr
+p -464 112 100 0 -1 setj:real_pwr_B word addr
+p -464 80 100 0 -1 setk:real_pwr_C word addr
+p -464 48 100 0 -1 setl:pwr_factor_A word addr
+p -464 16 100 0 -1 setm:pwr_factor_B word addr
+p -464 -16 100 0 -1 setn:pwr_factor_C word addr
+p -464 -48 100 0 -1 seto:line_volt_A-B word addr
+p -464 -80 100 0 -1 setp:line_volt_B-C word addr
+p -464 -112 100 0 -1 setq:line_volt_A-C word addr
+p -464 -160 100 0 -1 setr:ph_volt_A word addr
+p -464 -192 100 0 -1 sets:ph_volt_B word addr
+p -464 -224 100 0 -1 sett:ph_volt_C word addr
+p -464 -256 100 0 -1 setu:current_A word addr
+p -464 -288 100 0 -1 setv:current_B word addr
+p -464 -320 100 0 -1 setw:current_C word addr
+[layers]
+<symbol>
+l 100 0 0 -144 480 prChillerPwr
+l 100 0 0 -320 528 PLC Interface
+l 120 0 0 -384 560 Chiller Power Monitoring
+r 0 -496 512 0 608
+r 0 -496 -352 0 608
+[comments]

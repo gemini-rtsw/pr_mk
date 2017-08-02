@@ -1,0 +1,14 @@
+[symbol2]
+bbox 32 32 448 288
+uniq 1313
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 0 0 72 264 Electrical Power Monitoring
+l 100 0 0 304 48 ecsElectric
+r 0 32 32 448 288
+v 0 32 256
+448 256
+_
+[comments]

@@ -1,0 +1,12 @@
+[symbol2]
+bbox 32 160 416 352
+uniq 1099
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 100 7 0 224 336 PLC Heartbeat Interface
+l 100 0 0 208 176 plcHeartbeat
+r 0 32 160 416 320
+r 0 32 320 416 352
+[comments]

@@ -21,11 +21,19 @@
 
 TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 
-# If using the sequencer, point SNCSEQ at its top directory:
-#SNCSEQ=$(EPICS_BASE)/../modules/soft/seq
 
 # EPICS_BASE usually appears last so other apps can override stuff:
+
 EPICS_BASE=/gem_sw/epics/R3.14.12.4/base
+
+WORKSUP=/gem_sw/work/R3.14.12.4/support
+PRODSUP=/gem_sw/prod/R3.14.12.4/support
+
+IOCSTATS=$(PROD_SUPP)/iocStats/3-1-14-2
+PLC5SUP=$(WORKSUP)/plc5
+GEMREC=$(WORKSUP)/geminiRec
+SNCSEQ=$(WORKSUP)/seq
+
 
 # Set RULES here if you want to take build rules from somewhere
 # other than EPICS_BASE:

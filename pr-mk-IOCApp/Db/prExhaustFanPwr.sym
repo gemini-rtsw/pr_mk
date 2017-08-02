@@ -1,0 +1,22 @@
+[symbol2]
+bbox -496 144 0 608
+uniq 0
+[tools]
+[attributes]
+p -464 480 100 0 -1 set1:dev device name
+p -464 432 100 0 -1 set2:energy_LSR word addr
+p -464 400 100 0 -1 seta:energy_MSR word addr
+p -464 368 100 0 -1 setb:tot_real_pwr word addr
+p -464 304 100 0 -1 setd:tot_app_pwr word addr
+p -464 272 100 0 -1 sete:tot_pwr_factor word addr
+p -464 240 100 0 -1 setf:voltage_L-L word addr
+p -464 208 100 0 -1 setg:voltage_L-N word addr
+p -464 176 100 0 -1 seth:current word addr
+[layers]
+<symbol>
+l 120 0 0 -448 560 Exhaust Fan Power Monitoring
+l 100 0 0 -320 528 PLC Interface
+l 100 0 0 -192 480 prExhaustFanPwr
+r 0 -496 144 0 608
+r 0 -496 512 0 608
+[comments]

@@ -11,7 +11,9 @@ vpath %.db $(SYS_DB_PATHS)
 #----------------------------------------------------
 # Create and install (or just install) into <top>/db
 # databases, templates, substitutions like this
-# DB += xxx.db
+
+DEPSCHS = $(wildcard ../*.sch)
+DB += pr-mk-IOC.db
 
 include $(TOP)/configure/RULES
 #----------------------------------------

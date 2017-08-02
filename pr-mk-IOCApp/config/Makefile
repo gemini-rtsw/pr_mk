@@ -5,6 +5,7 @@ include $(TOP)/configure/CONFIG
 
 # Configuration data files are installed in $TOP)/data
 #DATA += xxx.pv
+DATA += prplc.cfg
 
 include $(TOP)/configure/RULES
 #----------------------------------------
