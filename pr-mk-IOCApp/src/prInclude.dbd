@@ -1,7 +1,7 @@
 include "base.dbd"
 include "prRoutines.dbd"
 include "initTrace.dbd"
-include "plc5.dbd"
+include "plc5Support.dbd"
 include "genSubRecord.dbd"
 include "cadRecord.dbd"
 include "applyRecord.dbd"
