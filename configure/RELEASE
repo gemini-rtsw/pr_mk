@@ -24,15 +24,15 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 
 # EPICS_BASE usually appears last so other apps can override stuff:
 
-EPICS_BASE=/gem_sw/epics/R3.14.12.4/base
+EPICS_BASE=/gem_sw/epics/R3.14.12.8/base
 
-WORKSUP=/gem_sw/work/R3.14.12.4/support
-PRODSUP=/gem_sw/prod/R3.14.12.4/support
+WORKSUP=/gem_sw/work/R3.14.12.8/support
+PRODSUP=/gem_sw/prod/R3.14.12.8/support
 
-IOCSTATS=$(PROD_SUPP)/iocStats/3-1-14-2
+IOCSTATS=$(PRODSUP)/iocStats/3-1-16-5
 PLC5SUP=$(WORKSUP)/enetPLC5
-GEMREC=$(WORKSUP)/geminiRec
-SNCSEQ=$(WORKSUP)/seq
+GEMREC=$(PRODSUP)/geminiRec/4-1-11
+SNCSEQ=$(PRODSUP)/seq/2-2-5-3
 
 
 # Set RULES here if you want to take build rules from somewhere
