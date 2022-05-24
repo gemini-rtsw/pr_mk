@@ -13,7 +13,8 @@ vpath %.db $(SYS_DB_PATHS)
 # databases, templates, substitutions like this
 
 DEPSCHS = $(wildcard ../*.sch)
-DB += pr-mk-IOC.db
+DB_INSTALLS += pr-mk-IOC.db
+DB += platformLift.db
 
 include $(TOP)/configure/RULES
 #----------------------------------------
