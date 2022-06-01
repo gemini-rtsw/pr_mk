@@ -1,5 +1,5 @@
 [schematic2]
-uniq 1
+uniq 4
 [tools]
 [detail]
 s -1248 368 200 0 Power Monitoring Words
@@ -8,7 +8,7 @@ s -1200 -768 200 0 Helium
 s 784 1120 200 0 Transfer Generator Power to ECS
 s -432 -656 100 0 Removed abC serial line entry. Plant Room is no longer coupled to ECS.
 [cell use]
-use prTop -272 71 100 0 prTop#3
+use prTOP -272 71 100 0 prTOP#3
 xform 0 56 472
 p -316 -32 100 0 1 seta:top pr:
 p -320 -96 100 0 1 seta1:p2eHb word N11:4
@@ -32,16 +32,39 @@ p 576 -384 100 0 1 setahus:ahuStat word N11:30
 p -320 -64 100 0 1 setb:prec 1
 p 576 -288 100 0 1 setc1ti:ch1Cti word N11:27
 p 576 -256 100 0 1 setc1to:ch1Cto word N11:26
-p 576 -352 100 0 1 setc2ti:ch2Cti word N11:29
-p 576 -320 100 0 1 setc2to:ch2Cto word N11:28
 p -952 -1080 100 0 1 setchbit:chillBits bit N11:45
 p 576 -960 100 0 1 setchill1:chill1 word N11:48
-p 576 -992 100 0 1 setchill2:chill2 word N11:49
+p 1136 -352 100 0 1 setcp1diff:cp1diff word N11:270
+p 1136 -32 100 0 1 setcp1in:cp1in word N11:260
+p 1136 -64 100 0 1 setcp1out:cp1out word N11:261
+p 1136 -384 100 0 1 setcp2diff:cp2diff word N11:271
+p 1136 -96 100 0 1 setcp2in:cp2in word N11:262
+p 1136 -128 100 0 1 setcp2out:cp2out word N11:263
+p 1136 -416 100 0 1 setcp3diff:cp3diff word N11:272
+p 1136 -160 100 0 1 setcp3in:cp3in word N11:264
+p 1136 -192 100 0 1 setcp3out:cp3out word N11:265
+p 1136 -448 100 0 1 setcp4diff:cp4diff word N11:273
+p 1136 -224 100 0 1 setcp4in:cp4in word N11:266
+p 1136 -256 100 0 1 setcp4out:cp4out word N11:267
+p 1136 -480 100 0 1 setcp5diff:cp5diff word N11:274
+p 1136 -288 100 0 1 setcp5in:cp5in word N11:268
+p 1136 -320 100 0 1 setcp5out:cp5out word N11:269
 p 576 -32 100 0 1 sete1s:ef1Stat word N11:18
 p 576 -224 100 0 1 sete1so:ef1Soft word N11:24
 p 576 -160 100 0 1 sete2c:ef2Curr word N11:22
 p 576 -64 100 0 1 sete2s:ef2Stat word N11:19
 p 576 -192 100 0 1 sete2v:ef2Volt word N11:23
+p 1136 -544 100 0 1 setfc1:fcInTemp word N11:275
+p 1136 -832 100 0 1 setfc10:fcAirTemp word N11:284
+p 1136 -864 100 0 1 setfc11:fcRejPow word N11:329
+p 1136 -576 100 0 1 setfc2:fcInPres word N11:276
+p 1136 -608 100 0 1 setfc3:fcOutTemp word N11:277
+p 1136 -640 100 0 1 setfc4:fcOutPres word N11:278
+p 1136 -672 100 0 1 setfc5:fcOutFlow word N11:279
+p 1136 -704 100 0 1 setfc6:cp6abInPres word N11:280
+p 1136 -736 100 0 1 setfc7:cp8OutPres word N11:281
+p 1136 -768 100 0 1 setfc8:heSupplyTemp word N11:282
+p 1136 -800 100 0 1 setfc9:cp8InPres word N11:283
 p 576 -928 100 0 1 seth2oTank:h2oTank word N11:47
 p -1056 -816 100 0 1 sethe1r:he1r word N11:141
 p -1408 -816 100 0 1 sethe1s:he1s word N11:140
@@ -59,6 +82,28 @@ p -992 -1008 100 0 1 setheitemp:heItemp word N11:154
 p -1408 -976 100 0 1 sethewflow:heWflow word N11:150
 p -1408 -1040 100 0 1 sethewpres:heWpres word N11:152
 p -1408 -1008 100 0 1 sethewtemp:heWtemp word N11:151
+p 832 656 100 0 1 sethx1:hx3cti word N11:285
+p 832 368 100 0 1 sethx10:hx3wrp word N11:328
+p 1248 656 100 0 1 sethx11:hx2cti word N11:293
+p 1248 624 100 0 1 sethx12:hx2cto word N11:294
+p 1248 592 100 0 1 sethx13:hx2cf word N11:295
+p 1248 560 100 0 1 sethx14:hx2cv word N11:296
+p 1248 528 100 0 1 sethx15:hx2cap word N11:325
+p 1248 496 100 0 1 sethx16:hx2csp word N11:324
+p 1248 464 100 0 1 sethx17:hx2wti word N11:297
+p 1248 432 100 0 1 sethx18:hx2wto word N11:298
+p 1248 400 100 0 1 sethx19:hx2wf word N11:299
+p 832 624 100 0 1 sethx2:hx3cto word N11:286
+p 1248 368 100 0 1 sethx20:hx2wrp word N11:326
+p 1248 336 100 0 1 sethx21:cp7ip word N11:230
+p 1248 304 100 0 1 sethx22:cp7op word N11:231
+p 832 592 100 0 1 sethx3:hx3cf word N11:289
+p 832 560 100 0 1 sethx4:hx3cv word N11:292
+p 832 528 100 0 1 sethx5:hx3cap word N11:327
+p 832 496 100 0 1 sethx6:hx3csp word N11:291
+p 832 464 100 0 1 sethx7:hx3wti word N11:287
+p 832 432 100 0 1 sethx8:hx3wto word N11:288
+p 832 400 100 0 1 sethx9:hx3wpo word N11:290
 p 576 -800 100 0 1 setltemp:ahlTemp word N11:43
 p 576 -128 100 0 1 setout:outTemp word N11:21
 p -1408 288 100 0 1 setp1:alv word N11:50
