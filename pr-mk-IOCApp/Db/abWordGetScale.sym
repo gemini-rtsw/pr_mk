@@ -8,6 +8,14 @@ uniq 768
 p 32 -32 100 0 1 setAb:ab /tyCo/1 41
 p 32 -96 100 0 1 setCalc:calc A
 p 32 -64 100 0 1 setDev:dev
+p 144 -128 100 0 -1 setHHSV:hhsv NO_ALARM
+p 144 -160 100 0 -1 setHSV:hsv NO_ALARM
+p 32 -160 100 0 -1 setHigh:high 0.0
+p 32 -128 100 0 -1 setHihi:hihi 0.0
+p 144 -224 100 0 -1 setLLSV:llsv NO_ALARM
+p 144 -192 100 0 -1 setLSV:lsv NO_ALARM
+p 32 -224 100 0 -1 setLolo:lolo 0.0
+p 32 -192 100 0 -1 setLow:low 0.0
 p 32 0 100 0 1 setWord:word 0
 [layers]
 <symbol>

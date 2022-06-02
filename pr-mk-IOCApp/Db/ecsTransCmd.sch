@@ -1,15 +1,13 @@
 [schematic2]
-uniq 5
+uniq 214
 [tools]
 [detail]
-w 1194 -229 100 0 n#1 eseqs.eseqs#201.LNK2 1168 -240 1280 -240 1280 -208 junction
-w 1282 -197 100 0 n#1 eseqs.eseqs#201.LNK1 1168 -208 1456 -208 ebos.ebos#210.SLNK
-w 1716 -245 100 2 n#2 hwout.hwout#211.outp 1712 -240 1712 -240 ebos.ebos#210.OUT
-w 776 -237 100 0 n#3 hwin.hwin#202.in 752 -240 848 -240 eseqs.eseqs#201.DOL2
-w 776 -205 100 0 n#4 hwin.hwin#203.in 752 -208 848 -208 eseqs.eseqs#201.DOL1
+w 1194 -229 100 0 n#149 eseqs.eseqs#201.LNK2 1168 -240 1280 -240 1280 -208 junction
+w 1282 -197 100 0 n#149 eseqs.eseqs#201.LNK1 1168 -208 1456 -208 ebos.ebos#210.SLNK
+w 1716 -245 100 2 n#212 hwout.hwout#211.outp 1712 -240 1712 -240 ebos.ebos#210.OUT
+w 776 -237 100 0 n#72 hwin.hwin#202.in 752 -240 848 -240 eseqs.eseqs#201.DOL2
+w 776 -205 100 0 n#24 hwin.hwin#203.in 752 -208 848 -208 eseqs.eseqs#201.DOL1
 [cell use]
-use bb200tr 128 -1208 -100 0 frame
-xform 0 1408 -384
 use hwout 1712 -281 100 0 hwout#211
 xform 0 1808 -240
 p 1792 -304 100 0 -1 val(outp):@$(abPd) $(address)
@@ -19,6 +17,8 @@ p 1360 -130 100 0 0 DISS:NO_ALARM
 p 1472 -320 100 0 1 DTYP:ornlEnetPLC5
 p 1136 -258 100 0 0 OMSL:closed_loop
 p 1600 -128 100 1024 -1 name:$(top)$(dev)$(cmd)Out
+use bb200tr 128 -1208 -100 0 frame
+xform 0 1408 -384
 use hwin 560 -281 100 0 hwin#202
 xform 0 656 -240
 p 563 -248 100 0 -1 val(in):0

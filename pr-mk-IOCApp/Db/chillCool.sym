@@ -1,11 +1,12 @@
 [symbol2]
-bbox -288 32 -80 224
+bbox -288 32 -96 224
 uniq 0
 [tools]
 [attributes]
 [layers]
 <symbol>
-l 100 0 0 -256 112 Temperatures
-l 100 0 0 -272 160 Chiller Coolant
+l 100 0 0 -240 64 Sensors
+l 100 0 0 -240 160 Chiller 1
+l 100 0 0 -240 112 External
 r 0 -288 32 -96 224
 [comments]

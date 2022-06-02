@@ -1,29 +1,27 @@
 [schematic2]
-uniq 14
+uniq 1369
 [tools]
 [detail]
-w 1420 555 100 0 n#1 eais.eais#1352.FLNK 1440 544 1472 544 1472 -352 junction
-w 1204 363 100 0 n#1 ecalcs.ecalcs#1336.FLNK 1104 352 1376 352 1376 -352 1520 -352 egenSub.egenSub#1355.SLNK
-w 1452 267 100 0 n#2 eais.eais#1352.VAL 1440 512 1456 512 1456 256 1520 256 egenSub.egenSub#1355.INPB
-w 1276 331 100 0 n#3 egenSub.egenSub#1355.INPA 1520 320 1104 320 ecalcs.ecalcs#1336.VAL
-w 1188 555 100 2 n#4 eais.eais#1352.INP 1184 560 1184 560 hwin.hwin#1353.in
-w 939 -572 100 2 n#5 hwin.hwin#1349.in 928 -608 928 -608 ebis.ebis#1350.INP
-w 315 -572 100 2 n#6 ebis.ebis#1347.INP 304 -608 304 -608 hwin.hwin#1348.in
-w 939 -124 100 2 n#7 ebis.ebis#1342.INP 928 -160 928 -160 hwin.hwin#1344.in
-w 939 -348 100 2 n#8 ebis.ebis#1343.INP 928 -384 928 -384 hwin.hwin#1345.in
-w 740 139 100 0 n#9 eais.eais#1333.FLNK 688 544 736 544 736 128 816 128 ecalcs.ecalcs#1336.SLNK
-w 716 523 100 0 n#10 eais.eais#1333.VAL 688 512 816 512 ecalcs.ecalcs#1336.INPA
-w 436 555 100 2 n#11 hwin.hwin#1334.in 432 560 432 560 eais.eais#1333.INP
-w 315 -124 100 2 n#12 hwin.hwin#1328.in 304 -160 304 -160 ebis.ebis#1327.INP
-w 315 -348 100 2 n#13 hwin.hwin#1325.in 304 -384 304 -384 ebis.ebis#1324.INP
+w 1420 555 100 0 n#1359 eais.eais#1352.FLNK 1440 544 1472 544 1472 -352 junction
+w 1204 363 100 0 n#1359 ecalcs.ecalcs#1336.FLNK 1104 352 1376 352 1376 -352 1520 -352 egenSub.egenSub#1355.SLNK
+w 1452 267 100 0 n#1368 eais.eais#1352.VAL 1440 512 1456 512 1456 256 1520 256 egenSub.egenSub#1355.INPB
+w 1276 331 100 0 n#1356 egenSub.egenSub#1355.INPA 1520 320 1104 320 ecalcs.ecalcs#1336.VAL
+w 1188 555 100 2 n#1354 eais.eais#1352.INP 1184 560 1184 560 hwin.hwin#1353.in
+w 939 -572 100 2 n#1351 hwin.hwin#1349.in 928 -608 928 -608 ebis.ebis#1350.INP
+w 315 -572 100 2 n#1346 ebis.ebis#1347.INP 304 -608 304 -608 hwin.hwin#1348.in
+w 939 -124 100 2 n#1341 ebis.ebis#1342.INP 928 -160 928 -160 hwin.hwin#1344.in
+w 939 -348 100 2 n#1340 ebis.ebis#1343.INP 928 -384 928 -384 hwin.hwin#1345.in
+w 740 139 100 0 n#1339 eais.eais#1333.FLNK 688 544 736 544 736 128 816 128 ecalcs.ecalcs#1336.SLNK
+w 716 523 100 0 n#1338 eais.eais#1333.VAL 688 512 816 512 ecalcs.ecalcs#1336.INPA
+w 436 555 100 2 n#1335 hwin.hwin#1334.in 432 560 432 560 eais.eais#1333.INP
+w 315 -124 100 2 n#1329 hwin.hwin#1328.in 304 -160 304 -160 ebis.ebis#1327.INP
+w 315 -348 100 2 n#1326 hwin.hwin#1325.in 304 -384 304 -384 ebis.ebis#1324.INP
 s 1728 -720 100 0 Angelic Ebbers
 s 1936 -672 150 0 Transfer Generator Power
 s 1984 -608 130 0 Enclosure Control System
 s 1760 -752 80 0 October 2014
 s 2224 -752 80 0 ecsTransfer.sch
 [cell use]
-use bb200tr -64 -888 -100 0 frame
-xform 0 1216 -64
 use hwin 992 519 100 0 hwin#1353
 xform 0 1088 560
 p 912 592 100 0 -1 val(in):@$(abP) $(ups1time)
@@ -123,4 +121,6 @@ use ecalcs 816 39 100 0 ecalcs#1336
 xform 0 960 304
 p 784 0 100 0 1 CALC:(A&240)>>4
 p 928 32 100 1024 -1 name:$(top)$(dev)genTransferSeq
+use bb200tr -64 -888 -100 0 frame
+xform 0 1216 -64
 [comments]

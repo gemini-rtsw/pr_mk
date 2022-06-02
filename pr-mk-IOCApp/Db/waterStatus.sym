@@ -5,7 +5,8 @@ uniq 251
 [attributes]
 [layers]
 <symbol>
-l 150 7 0 176 192 Water Status
+l 150 0 0 96 224 Chiller 1
 l 100 0 0 160 48 waterStatus
+l 150 7 0 192 160 Water Status
 r 0 32 32 320 288
 [comments]

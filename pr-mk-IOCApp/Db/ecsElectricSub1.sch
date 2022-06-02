@@ -1,5 +1,5 @@
 [schematic2]
-uniq 1
+uniq 1297
 [tools]
 [detail]
 s 2208 -768 80 0 ecsElectricSub1.sch
@@ -8,8 +8,6 @@ s 1984 -608 130 0 Enclosure Control System
 s 1936 -672 150 0 Electrical Power Monitors
 s 1728 -720 100 0 Angelic Ebbers
 [cell use]
-use bb200tr -64 -888 -100 0 frame
-xform 0 1216 -64
 use abWordGetScale 2144 -185 100 0 abWordGetScale#1296
 xform 0 2256 -96
 p 2144 -192 100 0 1 setAb:ab $(abP)
@@ -160,4 +158,6 @@ p 64 416 100 0 1 setAb:ab $(abP)
 p 64 320 100 0 1 setCalc:calc $(calc)
 p 64 384 100 0 1 setDev:dev $(dev)alv
 p 64 352 100 0 1 setWord:word $(alv)
+use bb200tr -64 -888 -100 0 frame
+xform 0 1216 -64
 [comments]
