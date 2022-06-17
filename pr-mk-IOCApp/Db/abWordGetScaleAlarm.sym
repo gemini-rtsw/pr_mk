@@ -1,0 +1,24 @@
+[symbol2]
+bbox 32 32 256 160
+port 192 64 100 0 flnk symbol 2 256 64 0
+port 160 128 100 0 wordOut symbol 2 256 128 0
+uniq 768
+[tools]
+[attributes]
+p 32 -32 100 0 1 setAb:ab /tyCo/1 41
+p 32 -96 100 0 1 setCalc:calc A
+p 32 -64 100 0 1 setDev:dev
+p -224 -80 100 0 1 setHHSV:HHSV NO_ALARM
+p -224 16 100 0 1 setHIGH:HIGH 0.0
+p -224 -48 100 0 1 setHIHI:HIHI 0.0
+p -224 -16 100 0 1 setHSV:HSV NO_ALARM
+p -224 48 100 0 1 setLLSV:LLSV NO_ALARM
+p -224 80 100 0 1 setLOLO:LOLO 0.0
+p -224 144 100 0 1 setLOW:LOW 0.0
+p -224 112 100 0 1 setLSV:LSV NO_ALARM
+p 32 0 100 0 1 setWord:word 0
+[layers]
+<symbol>
+l 90 0 0 48 48 abWordGetScaleAlarm
+r 0 32 32 256 160
+[comments]

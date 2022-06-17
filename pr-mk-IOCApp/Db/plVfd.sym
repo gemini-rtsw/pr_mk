@@ -1,0 +1,35 @@
+[symbol2]
+bbox -496 -272 0 608
+uniq 27
+[tools]
+[attributes]
+p -464 480 100 0 -1 set1:dev device name ie corner1
+p -464 408 100 0 -1 seta:ready drive ready bit address
+p -464 376 100 0 -1 setb:running drive running bit address
+p -464 344 100 0 -1 setc:alarm alarm triggered bit address
+p -464 312 100 0 -1 setd:fault faulted bit address
+p -464 280 100 0 -1 sete:dirCom direction Command bit address
+p -464 248 100 0 -1 setf:dirAct direction Actual bit address
+p -464 216 100 0 -1 setg:accelerating accelerating bit address
+p -464 184 100 0 -1 seth:decelerating decelerating bit address
+p -464 152 100 0 -1 seti:atspeed atspeed bit addr
+p -464 -144 100 0 -1 setj:lowEnc lower 16 bits word addr
+p -464 -176 100 0 -1 setk:upEnc sign and upper 15 bits addr
+p -464 96 100 0 -1 setl:current output current (.1A) addr
+p -464 64 100 0 -1 setm:freq output frequency (.1Hz) addr
+p -464 32 100 0 -1 setn:voltage output voltage (.1V) addr
+p -464 0 100 0 -1 seto:power output power (.01kW) addr
+p -464 -32 100 0 -1 setp:speed speed fdbk (.1 rpm) addr
+p -464 -64 100 0 -1 setq:busvolt DC bus voltage (.1V) addr
+p -464 -112 100 0 -1 set2:position position (mm) addr
+p -459 -221 100 0 -1 set3:calc (A>32767)?(A-65536)/10:A/10
+p -459 -249 100 0 -1 set4:calc2 (A>32767)?(A-65536)/100:A/100
+p -466 447 100 0 -1 set5:abP enet plc interface
+[layers]
+<symbol>
+l 100 0 0 -96 480 plVfd
+l 100 0 0 -320 528 PLC Interface
+l 120 0 0 -344 560 Platform Lift VFD
+r 0 -496 -272 0 608
+r 0 -496 512 0 608
+[comments]
