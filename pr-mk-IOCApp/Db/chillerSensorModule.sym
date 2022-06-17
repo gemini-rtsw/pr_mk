@@ -1,0 +1,22 @@
+[symbol2]
+bbox -32 -192 384 288
+uniq 251
+[tools]
+[attributes]
+p 0 160 100 0 -1 set1:sm device name ie ch2sm1
+p 0 96 100 0 -1 set2:ti temp in addr
+p 0 64 100 0 -1 set3:to temp out addr
+p 0 32 100 0 -1 set4:c1low C1 Low Pres Circuit addr
+p 0 0 100 0 -1 set5:c1high C1 High Pres Circuit addr
+p 0 -32 100 0 -1 set6:c2low C2 Low Pres Circuit addr
+p 0 -64 100 0 -1 set7:c2high C2 High Pres Circuit addr
+p 0 -96 100 0 -1 set8:bits alarm, status bits (0-9)
+[layers]
+<symbol>
+l 150 7 0 176 240 ChillerSensorModule
+l 100 0 0 144 -160 chillerSensorModule
+r 0 -32 -192 384 288
+v 0 -32 208
+384 208
+_
+[comments]

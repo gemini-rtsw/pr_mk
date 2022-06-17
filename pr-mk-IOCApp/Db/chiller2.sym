@@ -1,0 +1,14 @@
+[symbol2]
+bbox 32 32 320 288
+uniq 251
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 140 7 0 176 256 Chiller 2 Status
+l 100 0 0 224 48 chiller2
+r 0 32 32 320 288
+v 0 32 240
+320 240
+_
+[comments]

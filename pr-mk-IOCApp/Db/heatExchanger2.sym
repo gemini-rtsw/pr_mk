@@ -1,0 +1,11 @@
+[symbol2]
+bbox 32 32 320 288
+uniq 251
+[tools]
+[attributes]
+[layers]
+<symbol>
+l 150 7 0 176 192 HX2 Status
+l 100 0 0 144 48 heatExchanger2
+r 0 32 32 320 288
+[comments]
