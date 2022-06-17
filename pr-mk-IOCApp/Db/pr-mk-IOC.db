@@ -31618,7 +31618,7 @@ record(bo,"pr:emhc:emhc6CONStart") {
     field(SIMS,"NO_ALARM")
     field(IVOA,"Continue normally")
     field(IVOV,"0")
-}
+} 
 record(bo,"pr:emhc:emhc6CONStop") {
     field(DESC,"binary output record")
     field(SCAN,"Passive")
