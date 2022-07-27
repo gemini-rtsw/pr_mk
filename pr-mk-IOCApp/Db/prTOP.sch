@@ -1,8 +1,8 @@
 [schematic2]
-uniq 31
+uniq 2
 [tools]
 [detail]
-w 480 -405 100 0 n#17 ecalcs.present.INPA 368 -512 256 -512 256 -416 752 -416 752 -704 656 -704 ecalcs.present.VAL
+w 312 -509 100 0 n#1 ecalcs.present.INPA 368 -512 256 -512 256 -416 752 -416 752 -704 656 -704 ecalcs.present.VAL
 s 880 848 100 0 HX1A Coolant Flow
 s -1216 -688 100 0 PR Air Temperature
 s 864 208 100 0 AHU Differential Pressure
@@ -120,7 +120,7 @@ xform 0 -1072 960
 p -1260 780 100 0 1 seta:dev elec:
 p -1264 752 100 0 1 setb:calc A
 p -1248 704 100 0 1 setc:prec 2
-use eborderC -1632 -1241 100 1536 eborderC#1
+use eborderC -1632 -1241 100 0 eborderC#1
 xform 0 48 64
 p 1048 -1084 100 1024 -1 author:Angelic Ebbers
 p 1044 -1120 100 1024 -1 date:September 23, 2014
@@ -128,4 +128,7 @@ p 1452 -1120 80 768 -1 file:prTOP.sch
 p 1396 -968 150 256 -1 project:Plant Room Interface VME
 p 1216 -1088 100 0 0 revision:$Revision: 1.2 $
 p 1400 -1032 200 256 -1 title:Plant Room Top Level
+use emhcTop -840 -512 100 0 emhcTop#31
+xform 0 -744 -416
+p -817 -560 100 0 1 set0:dev emhc
 [comments]

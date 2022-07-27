@@ -26,7 +26,7 @@ p 408 1712 100 0 -1 seto:power word N11:14
 p 408 1680 100 0 -1 setp:speed word N11:15
 p 408 1648 100 0 -1 setq:busvolt word N11:16
 p 408 1600 100 0 -1 set2:position word N11:19
-p 580 2167 100 0 -1 set5:abP bfoIoc 7
+p 580 2167 100 0 -1 set5:abP prplc 2
 p 406 2220 100 0 -1 set6:top pl:
 p 747 2130 100 0 -1 set7:prec 1
 use plVfd 976 1424 100 0 plVfd#5
@@ -50,7 +50,7 @@ p 1008 1720 100 0 -1 seto:power word N11:24
 p 1008 1688 100 0 -1 setp:speed word N11:25
 p 1008 1656 100 0 -1 setq:busvolt word N11:26
 p 1008 1608 100 0 -1 set2:position word N11:29
-p 1189 2175 100 0 -1 set5:abP bfoIoc 7
+p 1189 2175 100 0 -1 set5:abP prplc 2
 p 1017 2225 100 0 -1 set6:top pl:
 p 1374 2141 100 0 -1 set7:prec 1
 use plVfd 384 312 100 0 plVfd#7
@@ -74,7 +74,7 @@ p 416 608 100 0 -1 seto:power word N11:34
 p 416 576 100 0 -1 setp:speed word N11:35
 p 416 544 100 0 -1 setq:busvolt word N11:36
 p 416 496 100 0 -1 set2:position word N11:39
-p 598 1063 100 0 -1 set5:abP bfoIoc 7
+p 598 1063 100 0 -1 set5:abP prplc 2
 p 421 1116 100 0 -1 set6:top pl:
 p 785 1014 100 0 -1 set7:prec 1
 use plVfd 1000 320 100 0 plVfd#9
@@ -98,7 +98,7 @@ p 1032 616 100 0 -1 seto:power word N11:44
 p 1032 584 100 0 -1 setp:speed word N11:45
 p 1032 552 100 0 -1 setq:busvolt word N11:46
 p 1032 504 100 0 -1 set2:position word N11:49
-p 1214 1073 100 0 -1 set5:abP bfoIoc 7
+p 1214 1073 100 0 -1 set5:abP prplc 2
 p 1039 1121 100 0 -1 set6:top pl:
 p 1385 1020 100 0 -1 set7:prec 1
 [comments]
