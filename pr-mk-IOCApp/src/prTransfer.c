@@ -1,7 +1,7 @@
 /*
  *    Gemini Enclosure Control System
  *
- *     Air Handling UnitS gENsub functions
+ *     Air Handling Units and EMHC gensub functions
  */
 
 #include <stdio.h>
@@ -12,6 +12,7 @@
 #include <genSubRecord.h>
 #include <registryFunction.h>
 #include <epicsExport.h>
+#include <dbAccess.h>
 
 /*
  * Air Handling Units control system 
@@ -27,6 +28,42 @@
 #define ECS_BATTERY_TIME       	*(double *)psr->b
 #define BATTERY_MIN             *(double *)psr->valb
 #define BATTERY_SEC             *(double *)psr->valc
+
+/*
+ * FUNCTION emhcPvSave
+ *      saves the instruments associated with a plug in a pv file
+ */
+
+void emhcPvSave(struct genSubRecord *pv) {
+    int status = remove("./data/emhcInstr.pv");
+     
+    FILE *fp = fopen("./data/emhcInstr.pv", "w");
+    if (fp == NULL) {
+        fprintf(stderr, "Failed to open pv file\n");
+        return;
+    }
+
+    fprintf(fp, "string pr:emhcInstrSelectA = \"%p\"; \n", pv->vala); 
+    fprintf(fp, "string pr:emhcInstrSelectB = \"%p\"; \n", pv->valb); 
+    fprintf(fp, "string pr:emhcInstrSelectC = \"%p\"; \n", pv->valc); 
+    fprintf(fp, "string pr:emhcInstrSelectD = \"%p\"; \n", pv->vald); 
+    fprintf(fp, "string pr:emhcInstrSelectE = \"%p\"; \n", pv->vale); 
+    fprintf(fp, "string pr:emhcInstrSelectF = \"%p\"; \n", pv->valf); 
+    fprintf(fp, "string pr:emhcInstrSelectG = \"%p\"; \n", pv->valg); 
+    fprintf(fp, "string pr:emhcInstrSelectH = \"%p\"; \n", pv->valh); 
+    fprintf(fp, "string pr:emhcInstrSelectI = \"%p\"; \n", pv->vali); 
+    fprintf(fp, "string pr:emhcInstrSelectJ = \"%p\"; \n", pv->valj); 
+    fprintf(fp, "string pr:emhcInstrSelectK = \"%p\"; \n", pv->valk); 
+    fprintf(fp, "string pr:emhcInstrSelectL = \"%p\"; \n", pv->vall); 
+    fprintf(fp, "string pr:emhcInstrSelectM = \"%p\"; \n", pv->valm); 
+    fprintf(fp, "string pr:emhcInstrSelectN = \"%p\"; \n", pv->valn); 
+    fprintf(fp, "string pr:emhcInstrSelectO = \"%p\"; \n", pv->valo); 
+    
+
+
+    return;
+}
+
 
 /*
  * FUNCTION genPowerProcess

@@ -23,6 +23,7 @@ pr-mk-IOC_DBD+=prInclude.dbd
 pr-mk-IOC_DBD+=prRoutines.dbd
 pr-mk-IOC_DBD+=plc5Support.dbd
 pr-mk-IOC_DBD+=geminiRecords.dbd
+pr-mk-IOC_DBD+=pvload.dbd
 
 # Add all the support libraries used by this IOC
 # pr-mk-IOC_LIBS += xxx
@@ -43,6 +44,7 @@ pr-mk-IOC_SRCS_DEFAULT += pr-mk-IOCMain.cpp
 pr-mk-IOC_LIBS += $(EPICS_BASE_IOC_LIBS)
 pr-mk-IOC_LIBS += plc5Support
 pr-mk-IOC_LIBS += geminiRecords
+pr-mk-IOC_LIBS += pvload
 
 #===========================
 
