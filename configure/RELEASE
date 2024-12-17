@@ -32,6 +32,7 @@ PRODSUP=/gem_base/epics/support
 PLC5SUP=$(PRODSUP)/enetPLC5
 GEMREC=$(PRODSUP)/geminiRec
 SNCSEQ=$(PRODSUP)/sequencer
+PVLOAD=$(PRODSUP)/pvload
 
 
 # Set RULES here if you want to take build rules from somewhere
