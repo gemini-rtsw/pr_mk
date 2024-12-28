@@ -27,7 +27,7 @@ ExclusiveArch: %{arch}
 Prefix: %{_prefix}
 ## You may specify dependencies here
 BuildRequires: epics-base-devel re2c tdct sequencer-devel geminiRec-devel enetPLC5-devel
-Requires: epics-base sequencer geminiRec enetPLC5
+Requires: epics-base sequencer geminiRec enetPLC5 pvload procServ conserver conserver-client procServ-conserver
 ## Switch dependency checking off
 AutoReqProv: no
 
@@ -65,13 +65,25 @@ cp -r db $RPM_BUILD_ROOT/%{_prefix}/%{name}
 cp -r bin $RPM_BUILD_ROOT/%{_prefix}/%{name}
 # cp -r include $RPM_BUILD_ROOT/%{_prefix}/%{name}
 cp -r configure $RPM_BUILD_ROOT/%{_prefix}/%{name}
+find $RPM_BUILD_ROOT/%{_prefix}/%{name}/configure -name ".git" -exec rm -rf {} \;
 
+%post
+# install service file and reload, disable the service
+cp -f %{_prefix}/%{name}/data/procserv-%{name}.service /etc/systemd/system/
+systemctl daemon-reload
+systemctl disable procserv-%{name}.service
+
+%preun
+# disable and stop the service before uninstalling
+systemctl disable procserv-%{name}.service
+systemctl stop procserv-%{name}.service
 
 %postun
-if [ "$1" = "0" ]; then
-	rm -rf %{_prefix}/%{name}
+# remove the service file and reload if not upgrading
+if [ "$1" == "0" ]; then
+    rm -f /etc/systemd/system/procserv-%{name}.service
+    systemctl daemon-reload
 fi
-
 
 %clean
 rm -rf $RPM_BUILD_ROOT
