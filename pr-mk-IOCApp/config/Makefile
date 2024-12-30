@@ -4,7 +4,7 @@ include $(TOP)/configure/CONFIG
 #  ADD MACRO DEFINITIONS AFTER THIS LINE
 
 # Configuration data files are installed in $TOP)/data
-#DATA += xxx.pv
+DATA += procserv-pr_mk.service
 DATA += prplc.cfg
 
 include $(TOP)/configure/RULES

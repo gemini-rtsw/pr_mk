@@ -96,6 +96,7 @@ rm -rf $RPM_BUILD_ROOT
    /%{_prefix}/%{name}/dbd
 #   /%{_prefix}/%{name}/include
    /%{_prefix}/%{name}/configure
+   /%{_prefix}/%{name}/data
 
 # %files devel
 # %defattr(-,root,root)
