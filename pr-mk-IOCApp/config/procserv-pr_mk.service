@@ -6,7 +6,7 @@ ConditionPathIsDirectory=/gem_base/epics/ioc/pr_mk
 [Service]
 Type=simple
 Environment="LD_LIBRARY_PATH=:/gem_base/epics/ioc/pr_mk/lib/linux-x86_64"
-ExecStart=/bin/procServ --foreground --logfile /gemsoft/var/log/pr/pr.log --name pr_mk --ignore ^D^C^] --logoutcmd ^D --chdir /gem_base/epics/ioc/pr_mk --info-file /run/procserv-pr_mk/info --port 1235 --allow /gem_base/epics/ioc/pr_mk/bin/linux-x86_64/stpr-mk-ioc.boot
+ExecStart=/bin/procServ --foreground --logfile /gemsoft/var/log/pr/pr.log --name pr_mk --ignore ^D^C^] --logoutcmd ^D --chdir /gem_base/epics/ioc/pr_mk --info-file /run/procserv-pr_mk/info --port 1235 --allow /gem_base/epics/ioc/pr_mk/bin/linux-x86_64/stpr-mk-IOC.boot
 RuntimeDirectory=procserv-pr_mk
 StandardOutput=syslog
 StandardError=inherit
