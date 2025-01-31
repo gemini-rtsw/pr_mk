@@ -1,0 +1,7 @@
+string $(top)emhcInstrList$(num).ZRST = "None";
+string $(top)emhcInstrList$(num).ONST = "CIR PUMP";
+string $(top)emhcInstrList$(num).TWST = "IGRINS-2";
+string $(top)emhcInstrList$(num).THST = "GMOS";
+string $(top)emhcInstrList$(num).FRST = "GNIRS";
+string $(top)emhcInstrList$(num).FVST = "NIFS";
+string $(top)emhcInstrList$(num).SXST = "NIRI";

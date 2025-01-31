@@ -10,7 +10,7 @@ use bb200tr -64 -888 -100 0 frame
 xform 0 1216 -64
 use ebis 264 328 100 0 ebis#1271
 xform 0 392 376
-p 376 296 100 1024 1 name:pr:emhc:emhc3CONStatus
+p 376 296 100 1024 1 name:$(top)emhc:emhc3CONStatus
 p 40 -156 100 0 0 def(INP):@prplc 0 bit N11:156/11
 p 40 374 100 0 1 SCAN:1 second
 p 152 502 100 0 0 DTYP:ornlEnetPLC5
@@ -18,7 +18,7 @@ p 32 422 100 0 0 ONAM:ON
 p 32 454 100 0 0 ZNAM:OFF
 use ebis 248 168 100 0 ebis#1275
 xform 0 376 216
-p 360 136 100 1024 1 name:pr:emhc:emhc4CONStatus
+p 360 136 100 1024 1 name:$(top)emhc:emhc4CONStatus
 p 24 214 100 0 1 SCAN:1 second
 p 24 -316 100 0 0 def(INP):@prplc 0 bit N11:156/12
 p 136 342 100 0 0 DTYP:ornlEnetPLC5
@@ -26,7 +26,7 @@ p 32 486 100 0 0 ONAM:ON
 p 32 518 100 0 0 ZNAM:OFF
 use ebis 264 -16 100 0 ebis#1279
 xform 0 392 32
-p 376 -48 100 1024 1 name:pr:emhc:emhc5CONStatus
+p 376 -48 100 1024 1 name:$(top)emhc:emhc5CONStatus
 p 40 30 100 0 1 SCAN:1 second
 p 40 -500 100 0 0 def(INP):@prplc 0 bit N11:156/13
 p 152 158 100 0 0 DTYP:ornlEnetPLC5
@@ -34,7 +34,7 @@ p 40 478 100 0 0 ONAM:ON
 p 40 510 100 0 0 ZNAM:OFF
 use ebis 256 -184 100 0 ebis#1283
 xform 0 384 -136
-p 368 -216 100 1024 1 name:pr:emhc:emhc6CONStatus
+p 368 -216 100 1024 1 name:$(top)emhc:emhc6CONStatus
 p 32 -668 100 0 0 def(INP):@prplc 0 bit N11:156/14
 p 32 -138 100 0 1 SCAN:1 second
 p 144 -10 100 0 0 DTYP:ornlEnetPLC5
@@ -144,7 +144,7 @@ p -568 -16 100 0 0 set16:bito 14
 p -568 -16 100 0 0 set17:bitp 15
 use ebis 256 488 100 0 ebis#1268
 xform 0 384 536
-p 368 456 100 1024 1 name:pr:emhc:emhc1CONStatus
+p 368 456 100 1024 1 name:$(top)emhc:emhc1CONStatus
 p 32 4 100 0 0 def(INP):@prplc 0 bit N11:156/10
 p 32 534 100 0 1 SCAN:1 second
 p 144 662 100 0 0 DTYP:ornlEnetPLC5
@@ -152,7 +152,7 @@ p 32 374 100 0 0 ONAM:ON
 p 32 406 100 0 0 ZNAM:OFF
 use ebis 960 520 100 0 ebis#1348
 xform 0 1088 568
-p 1072 488 100 1024 1 name:pr:emhc:trafoPRItripped
+p 1072 488 100 1024 1 name:$(top)emhc:trafoPRItripped
 p 1075 463 100 0 1 def(INP):@prplc 0 bit N11:159/0
 p 736 566 100 0 1 SCAN:1 second
 p 848 694 100 0 0 DTYP:ornlEnetPLC5
@@ -160,7 +160,7 @@ p 736 406 100 0 0 ONAM:ON
 p 736 438 100 0 0 ZNAM:OFF
 use ebis 960 352 100 0 ebis#1350
 xform 0 1088 400
-p 1072 320 100 1024 1 name:pr:emhc:trafoPRIopen
+p 1072 320 100 1024 1 name:$(top)emhc:trafoPRIopen
 p 1075 295 100 0 1 def(INP):@prplc 0 bit N11:159/1
 p 736 398 100 0 1 SCAN:1 second
 p 848 526 100 0 0 DTYP:ornlEnetPLC5
@@ -168,7 +168,7 @@ p 736 238 100 0 0 ONAM:ON
 p 736 270 100 0 0 ZNAM:OFF
 use ebis 992 160 100 0 ebis#1352
 xform 0 1120 208
-p 1104 128 100 1024 1 name:pr:emhc:pwr3phTripped
+p 1104 128 100 1024 1 name:$(top)emhc:pwr3phTripped
 p 1107 103 100 0 1 def(INP):@prplc 0 bit N11:159/2
 p 768 206 100 0 1 SCAN:1 second
 p 880 334 100 0 0 DTYP:ornlEnetPLC5
@@ -176,7 +176,7 @@ p 768 46 100 0 0 ONAM:ON
 p 768 78 100 0 0 ZNAM:OFF
 use ebis 992 -8 100 0 ebis#1354
 xform 0 1120 40
-p 1104 -40 100 1024 1 name:pr:emhc:pwr3phOpen
+p 1104 -40 100 1024 1 name:$(top)emhc:pwr3phOpen
 p 1107 -65 100 0 1 def(INP):@prplc 0 bit N11:159/3
 p 768 38 100 0 1 SCAN:1 second
 p 880 166 100 0 0 DTYP:ornlEnetPLC5
@@ -184,7 +184,7 @@ p 768 -122 100 0 0 ONAM:ON
 p 768 -90 100 0 0 ZNAM:OFF
 use ebis 976 -192 100 0 ebis#1356
 xform 0 1104 -144
-p 1088 -224 100 1024 1 name:pr:emhc:24vdcTripped
+p 1088 -224 100 1024 1 name:$(top)emhc:24vdcTripped
 p 1091 -249 100 0 1 def(INP):@prplc 0 bit N11:159/4
 p 752 -146 100 0 1 SCAN:1 second
 p 864 -18 100 0 0 DTYP:ornlEnetPLC5
@@ -192,7 +192,7 @@ p 752 -306 100 0 0 ONAM:ON
 p 752 -274 100 0 0 ZNAM:OFF
 use ebis 1720 448 100 0 ebis#1360
 xform 0 1848 496
-p 1832 416 100 1024 1 name:pr:emhc:24vdcOpen
+p 1832 416 100 1024 1 name:$(top)emhc:24vdcOpen
 p 1835 391 100 0 1 def(INP):@prplc 0 bit N11:159/5
 p 1496 494 100 0 1 SCAN:1 second
 p 1608 622 100 0 0 DTYP:ornlEnetPLC5
@@ -200,7 +200,7 @@ p 1496 334 100 0 0 ONAM:ON
 p 1496 366 100 0 0 ZNAM:OFF
 use ebis 1704 264 100 0 ebis#1362
 xform 0 1832 312
-p 1816 232 100 1024 1 name:pr:emhc:trafoSECstatus
+p 1816 232 100 1024 1 name:$(top)emhc:trafoSECstatus
 p 1819 207 100 0 1 def(INP):@prplc 0 bit N11:159/6
 p 1480 310 100 0 1 SCAN:1 second
 p 1592 438 100 0 0 DTYP:ornlEnetPLC5
@@ -208,7 +208,7 @@ p 1480 150 100 0 0 ONAM:ON
 p 1480 182 100 0 0 ZNAM:OFF
 use ebis 1712 64 100 0 ebis#1364
 xform 0 1840 112
-p 1824 32 100 1024 1 name:pr:emhc:pwrMonitorStatus
+p 1824 32 100 1024 1 name:$(top)emhc:pwrMonitorStatus
 p 1827 7 100 0 1 def(INP):@prplc 0 bit N11:159/7
 p 1488 110 100 0 1 SCAN:1 second
 p 1600 238 100 0 0 DTYP:ornlEnetPLC5
@@ -216,7 +216,7 @@ p 1488 -50 100 0 0 ONAM:ON
 p 1488 -18 100 0 0 ZNAM:OFF
 use ebis 1736 -120 100 0 ebis#1366
 xform 0 1864 -72
-p 1848 -152 100 1024 1 name:pr:emhc:24vdcPSstatus
+p 1848 -152 100 1024 1 name:$(top)emhc:24vdcPSstatus
 p 1851 -177 100 0 1 def(INP):@prplc 0 bit N11:159/8
 p 1512 -74 100 0 1 SCAN:1 second
 p 1624 54 100 0 0 DTYP:ornlEnetPLC5
@@ -224,7 +224,7 @@ p 1512 -234 100 0 0 ONAM:ON
 p 1512 -202 100 0 0 ZNAM:OFF
 use ebis 1768 -304 100 0 ebis#1368
 xform 0 1896 -256
-p 1880 -336 100 1024 1 name:pr:emhc:24vdcPScurrent
+p 1880 -336 100 1024 1 name:$(top)emhc:24vdcPScurrent
 p 1883 -361 100 0 1 def(INP):@prplc 0 bit N11:159/9
 p 1544 -258 100 0 1 SCAN:1 second
 p 1656 -130 100 0 0 DTYP:ornlEnetPLC5
@@ -232,7 +232,7 @@ p 1544 -418 100 0 0 ONAM:ON
 p 1544 -386 100 0 0 ZNAM:OFF
 use ebis 1768 -464 100 0 ebis#1370
 xform 0 1896 -416
-p 1880 -496 100 1024 1 name:pr:emhc:pwrMonitorBypass
+p 1880 -496 100 1024 1 name:$(top)emhc:pwrMonitorBypass
 p 1883 -521 100 0 1 def(INP):@prplc 0 bit N11:159/10
 p 1544 -418 100 0 1 SCAN:1 second
 p 1656 -290 100 0 0 DTYP:ornlEnetPLC5

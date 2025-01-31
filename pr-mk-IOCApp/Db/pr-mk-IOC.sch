@@ -10,7 +10,7 @@ s -432 -656 100 0 Removed abC serial line entry. Plant Room is no longer coupled
 [cell use]
 use prTOP -272 71 100 0 prTOP#3
 xform 0 56 472
-p -316 -32 100 0 1 seta:top pr:
+p -316 -32 100 0 1 seta:top prv:
 p -320 -96 100 0 1 seta1:p2eHb word N11:4
 p -320 -128 100 0 1 seta2:e2pHb wordd N11:5
 p 576 -544 100 0 1 seta2dt:ah2Dt word N11:35

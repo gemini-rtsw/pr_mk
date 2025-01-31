@@ -1,0 +1,16 @@
+string $(top)emhcInstrSelectA = "None";
+string $(top)emhcInstrSelectB = "None";
+string $(top)emhcInstrSelectC = "None";
+string $(top)emhcInstrSelectD = "None";
+string $(top)emhcInstrSelectE = "None";
+string $(top)emhcInstrSelectF = "None";
+string $(top)emhcInstrSelectG = "None";
+string $(top)emhcInstrSelectH = "None";
+string $(top)emhcInstrSelectI = "None";
+string $(top)emhcInstrSelectJ = "None";
+string $(top)emhcInstrSelectK = "None";
+string $(top)emhcInstrSelectL = "None";
+string $(top)emhcInstrSelectM = "None";
+string $(top)emhcInstrSelectN = "None";
+string $(top)emhcInstrSelectO = "None";
+
