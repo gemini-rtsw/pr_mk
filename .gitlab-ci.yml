@@ -76,5 +76,5 @@ docker-build:
       --build-arg PACKAGE_NAME=${PACKAGE_NAME}
       -t ${CI_REGISTRY_IMAGE}:latest .
     # Push the image with different token
-    - docker login -u oauth2 -p ***REMOVED-GITLAB-TOKEN*** ${CI_REGISTRY}
+    - docker login -u oauth2 -p ${REGISTRY_TOKEN} ${CI_REGISTRY}
     - docker push ${CI_REGISTRY_IMAGE}:latest 
