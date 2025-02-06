@@ -1,19 +1,80 @@
-
-include:
-    project: 'nsf-noirlab/gemini/rtsw/gem-ci'
-    ref: "unstable/2024q4"
-    file: 
-     - '/templates/gitlab-ci/templates/global-rpm-container-docker.gitlab-ci.template.yml'
-     - '/templates/gitlab-ci/templates/app-rpm-container-docker.gitlab-ci.template.yml'
-      
-
 variables:
-    # BASE_CONTAINER is only used for projects with a branch name which is 
-    # not yet existing: in this case, the system assumes that an extra repository,
-    # either for one of the layers (common, epics-base, epics-support, apps) 
-    # or for special versions of (support) modules (that might be needed for an IOC),
-    # shall be created and existing ones be inherited from BASE_CONTAINER.
-    # For all other projects (where essentially only an RPM is build and deployed
-    # to one of the repos defined by the three/four types of projects above) this
-    # setting is derived from the branch name
-    BASE_CONTAINER: "registry.gitlab.com/nsf-noirlab/gemini/rtsw/gem-ci/epics-support_unstable/2024q4:latest"
+  GIT_STRATEGY: clone
+  TOKEN: "***REMOVED-GITLAB-TOKEN***"
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_TLS_CERTDIR: ""
+  PACKAGE_NAME: ${CI_PROJECT_NAME}
+
+services:
+  - docker:dind
+
+.docker-login: &docker_login
+  before_script:
+    - docker login -u oauth2 -p ${TOKEN} ${CI_REGISTRY}
+
+build:
+  image: docker:latest
+  stage: build
+  <<: *docker_login
+  script:
+    # Pull the container
+    - docker pull registry.gitlab.com/nsf-noirlab/gemini/rtsw/gemini-rtsw-repo/rocky8-packages:latest
+    
+    # Create rpms directory for artifacts
+    - mkdir -p rpms
+    
+    # Run all commands in a single container instance
+    - >
+      docker run --rm -v $(pwd):/work -w /work 
+      -e TOKEN=${TOKEN}
+      -e PACKAGE_NAME=${PACKAGE_NAME}
+      registry.gitlab.com/nsf-noirlab/gemini/rtsw/gemini-rtsw-repo/rocky8-packages:latest 
+      /bin/bash -l -c '
+        # Extract version from spec file
+        PACKAGE_VERSION=$(grep "^Version:" ${PACKAGE_NAME}.spec | awk "{print \$2}")
+        
+        # Create source directory and tarball with correct structure
+        mkdir -p /root/rpmbuild/SOURCES &&
+        dir_name="${PACKAGE_NAME}-${PACKAGE_VERSION}" &&
+        tar --transform "s,^,${dir_name}/," -czf /root/rpmbuild/SOURCES/${dir_name}.tar.gz . &&
+        make &&
+        rpmbuild -ba ${PACKAGE_NAME}.spec &&
+        # Copy RPMs to mounted volume for artifacts
+        cp /root/rpmbuild/RPMS/x86_64/*.rpm /work/rpms/ &&
+        git config --global credential.helper store &&
+        echo "https://oauth2:${TOKEN}@gitlab.com" > ~/.git-credentials &&
+        git config --global user.email "ci-pipeline@noreply.gitlab.com" &&
+        git config --global user.name "GitLab CI" &&
+        git clone https://gitlab.com/nsf-noirlab/gemini/rtsw/gemini-rtsw-repo.git &&
+        cd gemini-rtsw-repo &&
+        rpms=(/root/rpmbuild/RPMS/x86_64/*.rpm) &&
+        for ((i=0; i<${#rpms[@]}; i++)); do
+          if [ $i -eq $((${#rpms[@]}-1)) ]; then
+            ./upload_rpm.sh "${rpms[$i]}"
+          else
+            ./upload_rpm.sh --no-push "${rpms[$i]}"
+          fi
+        done
+      '
+  artifacts:
+    paths:
+      - rpms/*.rpm
+
+docker-build:
+  image: docker:latest
+  stage: deploy
+  needs: ["build"]
+  <<: *docker_login
+  script:
+    # Verify RPMs exist
+    - ls -la rpms/
+    # Build the Docker image using local RPM
+    - >
+      docker build 
+      --build-arg IN_PIPELINE=true 
+      --build-arg TOKEN=${TOKEN} 
+      --build-arg PACKAGE_NAME=${PACKAGE_NAME}
+      -t ${CI_REGISTRY_IMAGE}:latest .
+    # Push the image with different token
+    - docker login -u oauth2 -p ***REMOVED-GITLAB-TOKEN*** ${CI_REGISTRY}
+    - docker push ${CI_REGISTRY_IMAGE}:latest 
