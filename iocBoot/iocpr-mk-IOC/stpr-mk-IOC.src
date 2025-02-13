@@ -20,22 +20,22 @@ ornlPLC5DebugOn 3
 
 iocInit
 
-pvload "./data/emhcInstr.pv", "top=prv:"
-pvload "./data/emhcInstrList.pv", "num=A", "top=prv:"
-pvload "./data/emhcInstrList.pv", "num=B", "top=prv:"
-pvload "./data/emhcInstrList.pv", "num=C", "top=prv:"
-pvload "./data/emhcInstrList.pv", "num=D", "top=prv:"
-pvload "./data/emhcInstrList.pv", "num=E", "top=prv:"
-pvload "./data/emhcInstrList.pv", "num=F", "top=prv:"
-pvload "./data/emhcInstrList.pv", "num=G", "top=prv:"
-pvload "./data/emhcInstrList.pv", "num=H", "top=prv:"
-pvload "./data/emhcInstrList.pv", "num=I", "top=prv:"
-pvload "./data/emhcInstrList.pv", "num=J", "top=prv:"
-pvload "./data/emhcInstrList.pv", "num=K", "top=prv:"
-pvload "./data/emhcInstrList.pv", "num=L", "top=prv:"
-pvload "./data/emhcInstrList.pv", "num=M", "top=prv:"
-pvload "./data/emhcInstrList.pv", "num=N", "top=prv:"
-pvload "./data/emhcInstrList.pv", "num=O", "top=prv:"
+pvload "./data/emhcInstr.pv"
+pvload "./data/emhcInstrList.pv", "num=A"
+pvload "./data/emhcInstrList.pv", "num=B"
+pvload "./data/emhcInstrList.pv", "num=C"
+pvload "./data/emhcInstrList.pv", "num=D"
+pvload "./data/emhcInstrList.pv", "num=E"
+pvload "./data/emhcInstrList.pv", "num=F"
+pvload "./data/emhcInstrList.pv", "num=G"
+pvload "./data/emhcInstrList.pv", "num=H"
+pvload "./data/emhcInstrList.pv", "num=I"
+pvload "./data/emhcInstrList.pv", "num=J"
+pvload "./data/emhcInstrList.pv", "num=K"
+pvload "./data/emhcInstrList.pv", "num=L"
+pvload "./data/emhcInstrList.pv", "num=M"
+pvload "./data/emhcInstrList.pv", "num=N"
+pvload "./data/emhcInstrList.pv", "num=O"
 
 ## Start any sequence programs
 #seq(sncxxx, "user=tcumming")

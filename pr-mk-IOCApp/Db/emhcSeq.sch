@@ -12,7 +12,7 @@ use bb200tr 128 -1208 -100 0 frame
 xform 0 1408 -384
 use hwout 1712 -281 100 0 hwout#211
 xform 0 1808 -240
-p 1792 -304 100 0 -1 val(outp):@$(ab) $(word)/$(bit)
+p 1792 -304 100 0 -1 val(outp):@prplc $(word)/$(bit)
 use ebos 1456 -297 100 0 ebos#210
 xform 0 1584 -208
 p 1360 -130 100 0 0 DISS:NO_ALARM

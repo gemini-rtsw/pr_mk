@@ -1,7 +1,7 @@
-string $(top)emhcInstrList$(num).ZRST = "None";
-string $(top)emhcInstrList$(num).ONST = "CIR PUMP";
-string $(top)emhcInstrList$(num).TWST = "IGRINS-2";
-string $(top)emhcInstrList$(num).THST = "GMOS";
-string $(top)emhcInstrList$(num).FRST = "GNIRS";
-string $(top)emhcInstrList$(num).FVST = "NIFS";
-string $(top)emhcInstrList$(num).SXST = "NIRI";
+string prv:emhcInstrList$(num).ZRST = "None";
+string prv:emhcInstrList$(num).ONST = "CIR PUMP";
+string prv:emhcInstrList$(num).TWST = "IGRINS-2";
+string prv:emhcInstrList$(num).THST = "GMOS";
+string prv:emhcInstrList$(num).FRST = "GNIRS";
+string prv:emhcInstrList$(num).FVST = "NIFS";
+string prv:emhcInstrList$(num).SXST = "NIRI";
