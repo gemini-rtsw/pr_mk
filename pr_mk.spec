@@ -43,6 +43,7 @@ Requires: epics-base-devel
 Requires: sequencer-devel
 Requires: geminiRec-devel
 Requires: enetPLC5-devel
+Requires: pvload-devel
 
 %description devel
 Development files for %{name} EPICS IOC.
