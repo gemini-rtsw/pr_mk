@@ -23,39 +23,49 @@ build:
     # Create rpms directory for artifacts
     - mkdir -p rpms
     
-    # Run all commands in a single container instance
-    - >
-      docker run --rm -v $(pwd):/work -w /work 
-      -e TOKEN=${TOKEN}
-      -e PACKAGE_NAME=${PACKAGE_NAME}
-      registry.gitlab.com/nsf-noirlab/gemini/rtsw/gemini-rtsw-repo/rocky8-packages:latest 
-      /bin/bash -l -c '
-        # Extract version from spec file
-        PACKAGE_VERSION=$(grep "^Version:" ${PACKAGE_NAME}.spec | awk "{print \$2}")
-        
-        # Create source directory and tarball with correct structure
-        mkdir -p /root/rpmbuild/SOURCES &&
-        dir_name="${PACKAGE_NAME}-${PACKAGE_VERSION}" &&
-        tar --transform "s,^,${dir_name}/," -czf /root/rpmbuild/SOURCES/${dir_name}.tar.gz . &&
-        make &&
-        rpmbuild -ba ${PACKAGE_NAME}.spec &&
-        # Copy RPMs to mounted volume for artifacts
-        cp /root/rpmbuild/RPMS/x86_64/*.rpm /work/rpms/ &&
-        git config --global credential.helper store &&
-        echo "https://oauth2:${TOKEN}@gitlab.com" > ~/.git-credentials &&
-        git config --global user.email "ci-pipeline@noreply.gitlab.com" &&
-        git config --global user.name "GitLab CI" &&
-        git clone https://gitlab.com/nsf-noirlab/gemini/rtsw/gemini-rtsw-repo.git &&
-        cd gemini-rtsw-repo &&
-        rpms=(/root/rpmbuild/RPMS/x86_64/*.rpm) &&
-        for ((i=0; i<${#rpms[@]}; i++)); do
-          if [ $i -eq $((${#rpms[@]}-1)) ]; then
-            ./upload_rpm.sh "${rpms[$i]}"
-          else
-            ./upload_rpm.sh --no-push "${rpms[$i]}"
-          fi
-        done
-      '
+    # Debug: Show current directory and contents
+    - pwd
+    - ls -la
+    
+    # Install bash so we can run the script
+    - apk add --no-cache bash
+    
+    # Run build_rpm.sh
+    - chmod +x build_rpm.sh
+    - ./build_rpm.sh
+    
+    # Install required tools
+    - apk add --no-cache curl git
+    
+    # Configure git for uploads
+    - git config --global credential.helper store
+    - echo "https://oauth2:${TOKEN}@gitlab.com" > ~/.git-credentials
+    - git config --global user.email "ci-pipeline@noreply.gitlab.com"
+    - git config --global user.name "GitLab CI"
+    
+    # Clone repo and upload RPMs
+    - git clone https://gitlab.com/nsf-noirlab/gemini/rtsw/gemini-rtsw-repo.git
+    - cd gemini-rtsw-repo
+    - |
+      for rpm in ../rpms/*.rpm; do
+        if [ "$rpm" = "$(ls -t ../rpms/*.rpm | head -1)" ]; then
+          ./upload_rpm.sh "$rpm"
+        else
+          ./upload_rpm.sh --no-push "$rpm"
+        fi
+      done
+    - cd ..
+
+    # Upload RPMs to GitLab package registry
+    - |
+      for rpm in rpms/*.rpm; do
+        echo "Uploading $rpm..."
+        curl --header "PRIVATE-TOKEN: ${REGISTRY_TOKEN}" \
+          --upload-file "$rpm" \
+          "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/rpm-repo/1.0/$(basename $rpm)"
+        echo "Upload complete: $rpm"
+      done
+
   artifacts:
     paths:
       - rpms/*.rpm
@@ -66,15 +76,9 @@ docker-build:
   needs: ["build"]
   <<: *docker_login
   script:
-    # Verify RPMs exist
-    - ls -la rpms/
-    # Build the Docker image using local RPM
-    - >
-      docker build 
-      --build-arg IN_PIPELINE=true 
-      --build-arg TOKEN=${TOKEN} 
-      --build-arg PACKAGE_NAME=${PACKAGE_NAME}
-      -t ${CI_REGISTRY_IMAGE}:latest .
-    # Push the image with different token
-    - docker login -u oauth2 -p ${REGISTRY_TOKEN} ${CI_REGISTRY}
-    - docker push ${CI_REGISTRY_IMAGE}:latest 
+    # Install required tools
+    - apk add --no-cache bash git
+    
+    # Run the docker build script
+    - chmod +x build_docker.sh
+    - ./build_docker.sh 

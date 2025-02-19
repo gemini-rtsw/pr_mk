@@ -12,6 +12,11 @@ RUN dnf install -y epel-release && \
 
 # Install base development tools and dependencies
 RUN dnf install -y gcc-c++ \
+    make \
+    cmake \
+    git \
+    rpm-build \
+    rpmdevtools \
     conserver \
     conserver-client
 
@@ -25,14 +30,34 @@ gpgcheck=0\n\
 ' > /etc/yum.repos.d/gitlab-rpm-repo.repo && \
     dnf makecache --refresh
 
-# Copy RPMs if in pipeline mode
-COPY rpms/*.rpm /tmp/rpms/
+# Create directory for RPMs
+RUN mkdir -p /tmp/rpms/
+
+# Copy RPMs if they exist (in pipeline mode)
+COPY rpms/ /tmp/rpms/
 
 # Install local RPM if in pipeline mode, otherwise from repo
 RUN if [ "$IN_PIPELINE" = "true" ] ; then \
-        dnf install -y /tmp/rpms/*.rpm ; \
+        if [ "$(ls -A /tmp/rpms/)" ] ; then \
+            if ls /tmp/rpms/*-devel*.rpm 1> /dev/null 2>&1; then \
+                dnf install -y /tmp/rpms/*-devel*.rpm /tmp/rpms/*.rpm ; \
+            else \
+                dnf install -y /tmp/rpms/*.rpm ; \
+            fi \
+        else \
+            echo "No RPMs found in /tmp/rpms, falling back to repo install" && \
+            if dnf list ${PACKAGE_NAME}-devel &>/dev/null; then \
+                dnf install -y ${PACKAGE_NAME}-devel ${PACKAGE_NAME} ; \
+            else \
+                dnf install -y ${PACKAGE_NAME} ; \
+            fi \
+        fi \
     else \
-        dnf install -y ${PACKAGE_NAME} ; \
+        if dnf list ${PACKAGE_NAME}-devel &>/dev/null; then \
+            dnf install -y ${PACKAGE_NAME}-devel ${PACKAGE_NAME} ; \
+        else \
+            dnf install -y ${PACKAGE_NAME} ; \
+        fi \
     fi
 
 # Cleanup

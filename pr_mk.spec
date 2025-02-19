@@ -28,7 +28,7 @@ Prefix: %{_prefix}
 ## You may specify dependencies here
 BuildRequires: epics-base-devel re2c tdct sequencer-devel geminiRec-devel enetPLC5-devel
 Requires: epics-base sequencer geminiRec enetPLC5 pvload procServ conserver conserver-client procServ-conserver
-## Switch dependency checking off
+## Switch dependency checking off for main package only
 AutoReqProv: no
 
 %description
@@ -36,11 +36,16 @@ This is the module %{name}.
 
 ## If you want to have a devel-package to be generated uncomment the following:
 %package devel
-Summary: %{name}-devel Package
-Group: Development/Gemini
-BuildRequires: tdct sequencer-devel geminiRec-devel  enetPLC5-devel
+Summary: Development files for %{name}
+Group: Development/Libraries
+Requires: %{name} = %{version}-%{release}
+Requires: epics-base-devel
+Requires: sequencer-devel
+Requires: geminiRec-devel
+Requires: enetPLC5-devel
+
 %description devel
-This is the module %{name}.
+Development files for %{name} EPICS IOC.
 
 %prep
 %setup -q 
@@ -98,8 +103,8 @@ rm -rf $RPM_BUILD_ROOT
    /%{_prefix}/%{name}/configure
    /%{_prefix}/%{name}/data
 
-# %files devel
-# %defattr(-,root,root)
+%files devel
+%defattr(-,root,root)
 #   /%{_prefix}/%{name}/include
 
 %changelog
