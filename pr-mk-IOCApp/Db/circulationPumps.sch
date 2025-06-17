@@ -1,5 +1,5 @@
 [schematic2]
-uniq 98
+uniq 1
 [tools]
 [detail]
 s 2720 2400 200 0 Fluid Cooler Sensors
@@ -10,31 +10,33 @@ s 1888 -192 180 0 Created: April 15, 2016
 s 1888 -240 180 0 Updated: May 2018
 s 608 2416 200 0 Circulation Pump input/output pressures and deltas
 [cell use]
-use prCpVfd 256 -257 100 0 prCpVfd#97
-xform 0 504 136
-p 288 456 100 0 -1 set1:cp cp7
-p 288 408 100 0 -1 set2:seq word N11:232
-p 288 376 100 0 -1 seta:ready bit N11:232/4
-p 288 344 100 0 -1 setb:running bit N11:232/5
-p 288 312 100 0 -1 setc:alarm bit N11:232/6
-p 288 280 100 0 -1 setd:fault bit N11:232/7
-p 288 248 100 0 -1 sete:undervolt bit N11:232/8
-p 288 216 100 0 -1 setf:pwrloss bit N11:232/9
-p 288 184 100 0 -1 setg:auto bit N11:232/10
-p 288 152 100 0 -1 seth:es bit N11:232/11
-p 288 120 100 0 -1 seti:brkclosed bit N11:232/12
-p 288 88 100 0 -1 setj:brktrip bit N11:232/13
-p 288 56 100 0 -1 setk:brkol bit N11:232/14
-p 288 24 100 0 -1 setl:current word N11:233
-p 288 -8 100 0 -1 setm:freq word N11:234
-p 288 -40 100 0 -1 setn:voltage word N11:235
-p 288 -72 100 0 -1 seto:power word N11:236
-p 288 -104 100 0 -1 setp:temp word N11:237
-p 288 -136 100 0 -1 setq:busvolt word N11:238
-p 288 -192 100 0 -1 setr:zstr 408-Init Step
-p 288 -224 100 0 -1 sets:onst 409-Run Step
-p 288 -256 100 0 -1 sett:twst 410-Clr Flt-Mtr Running
-p 288 -288 100 0 -1 setu:thst 411-Clr Flt-Mtr Stopped
+use bd200tr -1712 -632 -100 0 frame
+xform 0 928 1072
+use prCpVfd 256 -441 100 0 prCpVfd#97
+xform 0 504 -48
+p 288 272 100 0 -1 set1:cp cp7
+p 288 224 100 0 -1 set2:seq word N11:232
+p 288 192 100 0 -1 seta:ready bit N11:232/4
+p 288 160 100 0 -1 setb:running bit N11:232/5
+p 288 128 100 0 -1 setc:alarm bit N11:232/6
+p 288 96 100 0 -1 setd:fault bit N11:232/7
+p 288 64 100 0 -1 sete:undervolt bit N11:232/8
+p 288 32 100 0 -1 setf:pwrloss bit N11:232/9
+p 288 0 100 0 -1 setg:auto bit N11:232/10
+p 288 -32 100 0 -1 seth:es bit N11:232/11
+p 288 -64 100 0 -1 seti:brkclosed bit N11:232/12
+p 288 -96 100 0 -1 setj:brktrip bit N11:232/13
+p 288 -128 100 0 -1 setk:brkol bit N11:232/14
+p 288 -160 100 0 -1 setl:current word N11:233
+p 288 -192 100 0 -1 setm:freq word N11:234
+p 288 -224 100 0 -1 setn:voltage word N11:235
+p 288 -256 100 0 -1 seto:power word N11:236
+p 288 -288 100 0 -1 setp:temp word N11:237
+p 288 -320 100 0 -1 setq:busvolt word N11:238
+p 288 -376 100 0 -1 setr:zstr 408-Init Step
+p 288 -408 100 0 -1 sets:onst 409-Run Step
+p 288 -440 100 0 -1 sett:twst 410-Clr Flt-Mtr Running
+p 288 -472 100 0 -1 setu:thst 411-Clr Flt-Mtr Stopped
 use prCpVfd -320 -257 100 0 prCpVfd#96
 xform 0 -72 136
 p -288 456 100 0 -1 set1:cp cp5
@@ -508,6 +510,80 @@ p 2304 656 100 0 1 setLOLO:LOLO 0.0
 p 2304 720 100 0 1 setLOW:LOW 0.0
 p 2304 688 100 0 1 setLSV:LSV NO_ALARM
 p 2560 576 100 0 1 setWord:word $(fcRejPow)
-use bd200tr -1712 -632 -100 0 frame
-xform 0 928 1072
+use prCpVfd 816 -433 100 0 prCpVfd#99
+xform 0 1064 -40
+p 848 280 100 0 -1 set1:cp cp4b
+p 848 232 100 0 -1 set2:seq word N11:472
+p 848 200 100 0 -1 seta:ready bit N11:472/4
+p 848 168 100 0 -1 setb:running bit N11:472/5
+p 848 136 100 0 -1 setc:alarm bit N11:472/6
+p 848 104 100 0 -1 setd:fault bit N11:472/7
+p 848 72 100 0 -1 sete:undervolt bit N11:472/8
+p 848 40 100 0 -1 setf:pwrloss bit N11:472/9
+p 848 8 100 0 -1 setg:auto bit N11:472/10
+p 848 -24 100 0 -1 seth:es bit N11:472/11
+p 848 -56 100 0 -1 seti:brkclosed bit N11:472/12
+p 848 -88 100 0 -1 setj:brktrip bit N11:472/13
+p 848 -120 100 0 -1 setk:brkol bit N11:472/14
+p 848 -152 100 0 -1 setl:current word N11:473
+p 848 -184 100 0 -1 setm:freq word N11:474
+p 848 -216 100 0 -1 setn:voltage word N11:475
+p 848 -248 100 0 -1 seto:power word N11:476
+p 848 -280 100 0 -1 setp:temp word N11:477
+p 848 -312 100 0 -1 setq:busvolt word N11:478
+p 848 -368 100 0 -1 setr:zstr 480-Init Step
+p 848 -400 100 0 -1 sets:onst 481-Run Step
+p 848 -432 100 0 -1 sett:twst 482-Clr Flt-Mtr Running
+p 848 -464 100 0 -1 setu:thst 483-Clr Flt-Mtr Stopped
+use abWordGetScaleAlarm 608 559 100 0 abWordGetScaleAlarm#101
+xform 0 720 648
+p 608 520 100 0 1 setAb:ab $(abP)
+p 608 456 100 0 1 setCalc:calc A/10
+p 608 488 100 0 1 setDev:dev cp4bin
+p 352 600 100 0 1 setLLSV:LLSV MAJOR
+p 352 632 100 0 1 setLOLO:LOLO 10.0
+p 352 696 100 0 1 setLOW:LOW 15.0
+p 352 664 100 0 1 setLSV:LSV MINOR
+p 608 552 100 0 1 setWord:word $(cp4bin)
+use abWordGetScaleAlarm 1208 551 100 0 abWordGetScaleAlarm#103
+xform 0 1320 640
+p 1208 512 100 0 1 setAb:ab $(abP)
+p 1208 448 100 0 1 setCalc:calc A/10
+p 1208 480 100 0 1 setDev:dev cp4bout
+p 1208 544 100 0 1 setWord:word $(cp4bout)
+use abWordGetScaleAlarm 1792 543 100 0 abWordGetScaleAlarm#105
+xform 0 1904 632
+p 1792 504 100 0 1 setAb:ab $(abP)
+p 1792 440 100 0 1 setCalc:calc $(calc)
+p 1792 472 100 0 1 setDev:dev cp4bdiff
+p 1536 584 100 0 1 setLLSV:LLSV MAJOR
+p 1536 616 100 0 1 setLOLO:LOLO 54.0
+p 1536 680 100 0 1 setLOW:LOW 57.0
+p 1536 648 100 0 1 setLSV:LSV MINOR
+p 1792 536 100 0 1 setWord:word $(cp4bdiff)
+use prCpAuto 1344 -488 100 0 prCpAuto#106
+xform 0 1592 -48
+p 1376 264 100 0 -1 set1:cp cp4auto
+p 1376 216 100 0 -1 set2:seq N11:471
+p 1376 184 100 0 -1 seta:
+p 1376 152 100 0 -1 setb:
+p 1376 120 100 0 -1 setc:
+p 1376 88 100 0 -1 setd:fault N11:470
+p 1376 56 100 0 -1 sete:
+p 1376 24 100 0 -1 setf:
+p 1376 -8 100 0 -1 setg:
+p 1376 -40 100 0 -1 seth:
+p 1376 -72 100 0 -1 seti:
+p 1376 -104 100 0 -1 setj:
+p 1376 -136 100 0 -1 setk:
+p 1376 -168 100 0 -1 setl:
+p 1376 -200 100 0 -1 setm:
+p 1376 -232 100 0 -1 setn:
+p 1376 -264 100 0 -1 seto:
+p 1376 -296 100 0 -1 setp:
+p 1376 -328 100 0 -1 setq:
+p 1376 -376 100 0 -1 setr:
+p 1376 -408 100 0 -1 sets:
+p 1376 -440 100 0 -1 sett:
+p 1376 -472 100 0 -1 setu:
 [comments]
