@@ -18,7 +18,7 @@
 
 Summary: %{name} Package, a module for EPICS base
 Name: %{name}
-Version: 2.9
+Version: 2.10
 Release: 8%{?dist}
 License: EPICS Open License
 Group: Applications/Engineering
