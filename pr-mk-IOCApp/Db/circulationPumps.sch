@@ -564,11 +564,11 @@ p 1792 536 100 0 1 setWord:word $(cp4bdiff)
 use prCpAuto 1344 -488 100 0 prCpAuto#106
 xform 0 1592 -48
 p 1376 264 100 0 -1 set1:cp cp4auto
-p 1376 216 100 0 -1 set2:seq N11:471
+p 1376 216 100 0 -1 set2:seq word N11:471
 p 1376 184 100 0 -1 seta:
 p 1376 152 100 0 -1 setb:
 p 1376 120 100 0 -1 setc:
-p 1376 88 100 0 -1 setd:fault N11:470
+p 1376 88 100 0 -1 setd:fault word N11:470
 p 1376 56 100 0 -1 sete:
 p 1376 24 100 0 -1 setf:
 p 1376 -8 100 0 -1 setg:
