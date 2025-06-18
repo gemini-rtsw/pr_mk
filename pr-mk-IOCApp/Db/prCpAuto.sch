@@ -56,11 +56,11 @@ p 440 712 100 0 1 SCAN:.5 second
 p 520 680 100 1024 -1 name:$(top)$(cp)SeqRaw
 use ecalcs 1120 -297 100 0 ecalcs#1294
 xform 0 1264 -32
-p 1088 -336 100 0 1 CALC:(A AND 240)/16
+p 1088 -336 100 0 1 CALC:(A >> 4) AND 15
 p 1232 -304 100 1024 1 name:$(top)$(cp)Seq2
 use ecalcs 880 -785 100 0 ecalcs#1296
 xform 0 1024 -520
-p 848 -824 100 0 1 CALC:(A AND 3840)/256
+p 848 -824 100 0 1 CALC:(A >> 8) AND 15
 p 992 -792 100 1024 1 name:$(top)$(cp)Seq3
 use embbis 1736 -9 100 0 embbis#1298
 xform 0 1864 64
@@ -82,11 +82,11 @@ p 1376 -600 100 0 1 ZRST:500-CP4B VFD no fault
 p 1408 -424 100 1024 1 name:$(top)$(cp)Sequence3
 use ecalcs 40 -25 100 0 ecalcs#1304
 xform 0 184 240
-p 8 -64 100 0 1 CALC:A AND 255
+p 8 -64 100 0 1 CALC:A AND 15
 p 152 -32 100 1024 1 name:$(top)$(cp)CP4FaultCnt
 use ecalcs -72 -585 100 0 ecalcs#1306
 xform 0 72 -320
-p -104 -624 100 0 1 CALC:(A AND 65280)/256
+p -104 -624 100 0 1 CALC:(A >> 4) AND 15
 p 40 -592 100 1024 1 name:$(top)$(cp)CP4BFaultCnt
 use eais -496 479 100 0 eais#1308
 xform 0 -368 552
