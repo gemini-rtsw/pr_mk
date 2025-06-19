@@ -47,6 +47,7 @@ use ecalcs 1376 135 100 0 ecalcs#1265
 xform 0 1520 400
 p 1344 96 100 0 1 CALC:A AND 15
 p 1488 128 100 1024 -1 name:$(top)$(cp)Seq
+p 1088 510 100 0 1 SCAN:.5 second 
 use eais 408 735 100 0 eais#1262
 xform 0 536 808
 p 408 728 100 0 1 DTYP:ornlEnetPLC5
@@ -58,36 +59,40 @@ use ecalcs 1120 -297 100 0 ecalcs#1294
 xform 0 1264 -32
 p 1088 -336 100 0 1 CALC:(A >> 4) AND 15
 p 1232 -304 100 1024 1 name:$(top)$(cp)Seq2
+p 832 78 100 0 1 SCAN:.5 second
 use ecalcs 880 -785 100 0 ecalcs#1296
 xform 0 1024 -520
 p 848 -824 100 0 1 CALC:(A >> 8) AND 15
 p 992 -792 100 1024 1 name:$(top)$(cp)Seq3
+p 592 -410 100 0 1 SCAN:.5 second
 use embbis 1736 -9 100 0 embbis#1298
 xform 0 1864 64
 p 1800 -16 100 0 1 OMSL:closed_loop
-p 1800 -80 100 0 1 ONST:497-CP4 VFD recovered from Fault
+p 1800 -80 100 0 1 ONST:497-CP4 recovered
 p 1448 110 100 0 0 SCAN:Passive
 p 1800 -144 100 0 1 THST:
-p 1800 -112 100 0 1 TWST:498-CP4 VFD RUN OFF-Fault recovery failed
+p 1800 -112 100 0 1 TWST:498-Recovery failed
 p 1800 -48 100 0 1 ZRST:496-CP4 VFD no fault
 p 1832 128 100 1024 1 name:$(top)$(cp)Sequence2
 use embbis 1312 -561 100 0 embbis#1300
 xform 0 1440 -488
 p 1376 -568 100 0 1 OMSL:closed_loop
-p 1376 -632 100 0 1 ONST:501-CP4B VFD recovered from Fault
+p 1376 -632 100 0 1 ONST:501-CP4B recovered
 p 1024 -442 100 0 0 SCAN:Passive
 p 1376 -696 100 0 1 THST:
-p 1376 -664 100 0 1 TWST:502-CP4B VFD RUN OFF-Fault recovery failed
+p 1376 -664 100 0 1 TWST:502-Recovery failed
 p 1376 -600 100 0 1 ZRST:500-CP4B VFD no fault
 p 1408 -424 100 1024 1 name:$(top)$(cp)Sequence3
 use ecalcs 40 -25 100 0 ecalcs#1304
 xform 0 184 240
 p 8 -64 100 0 1 CALC:A AND 15
 p 152 -32 100 1024 1 name:$(top)$(cp)CP4FaultCnt
+p -248 350 100 0 1 SCAN:.5 second
 use ecalcs -72 -585 100 0 ecalcs#1306
 xform 0 72 -320
 p -104 -624 100 0 1 CALC:(A >> 4) AND 15
 p 40 -592 100 1024 1 name:$(top)$(cp)CP4BFaultCnt
+p -360 -210 100 0 1 SCAN:.5 second
 use eais -496 479 100 0 eais#1308
 xform 0 -368 552
 p -496 472 100 0 1 DTYP:ornlEnetPLC5
