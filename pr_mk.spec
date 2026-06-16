@@ -3,7 +3,7 @@
 %define repository gemdev
 %define debug_package %{nil}
 %define arch %(uname -m)
-%define checkout %(git log --pretty=format:'%h' -n 1) 
+%define checkout %(if [ -n "$GIT_HASH" ]; then echo "$GIT_HASH"; else git rev-parse --short HEAD 2>/dev/null || echo nogit; fi)
 
 #These global defines are added to prevent stripping
 # symbols on vxWorks cross-compiled code
@@ -19,15 +19,29 @@
 Summary: %{name} Package, a module for EPICS base
 Name: %{name}
 Version: 2.13
-Release: 8%{?dist}
+Release: 8.git.%{checkout}%{?dist}
 License: EPICS Open License
 Group: Applications/Engineering
 Source0: %{name}-%{version}.tar.gz
 ExclusiveArch: %{arch}
 Prefix: %{_prefix}
 ## You may specify dependencies here
-BuildRequires: epics-base-devel re2c tdct sequencer-devel geminiRec-devel enetPLC5-devel
-Requires: epics-base sequencer geminiRec enetPLC5 pvload procServ conserver conserver-client procServ-conserver
+## Versions are pinned exactly. To upgrade a dependency, edit the version
+## below explicitly — do not relax the pins. pvload-devel is required: the
+## IOC dbd (pr-mk-IOC.dbd) pulls in pvload.dbd.
+BuildRequires: re2c
+BuildRequires: tdct
+BuildRequires: epics-base-devel = 7.0.7-0.git.16f5056.el8
+BuildRequires: sequencer-devel  = 2.2.9.e5e3615-4.git.3d01cdb.el8
+BuildRequires: geminiRec-devel  = 4.1.13-3.git.75a1b03.el8
+BuildRequires: enetPLC5-devel   = 2.1.12-2.git.c56e5e3.el8
+BuildRequires: pvload-devel     = 1.2.1-7.git.a9b856d.el8
+## No runtime Requires on the main package.
+## The artifacts shipped here are cross-compiled for the VME target
+## (RTEMS-mvme2700) and are network-booted by the board; nothing in this
+## package executes on the el8 install host. The support modules above are
+## needed only to LINK the cross-build, hence they are BuildRequires only.
+## (The -devel subpackage below keeps the pins to reproduce the build env.)
 ## Switch dependency checking off for main package only
 AutoReqProv: no
 
@@ -39,11 +53,12 @@ This is the module %{name}.
 Summary: Development files for %{name}
 Group: Development/Libraries
 Requires: %{name} = %{version}-%{release}
-Requires: epics-base-devel
-Requires: sequencer-devel
-Requires: geminiRec-devel
-Requires: enetPLC5-devel
-Requires: pvload-devel
+Requires: tdct
+Requires: epics-base-devel = 7.0.7-0.git.16f5056.el8
+Requires: sequencer-devel  = 2.2.9.e5e3615-4.git.3d01cdb.el8
+Requires: geminiRec-devel  = 4.1.13-3.git.75a1b03.el8
+Requires: enetPLC5-devel   = 2.1.12-2.git.c56e5e3.el8
+Requires: pvload-devel     = 1.2.1-7.git.a9b856d.el8
 
 %description devel
 Development files for %{name} EPICS IOC.
