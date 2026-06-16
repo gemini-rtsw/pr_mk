@@ -96,7 +96,7 @@ long genPowerProcess (struct genSubRecord *psr) {
     break;
 
    case 5:
-    strcpy(psr->vala, "325: command ATS-3 to generator");
+    strcpy(psr->vala, "325: cmd ATS-3 to gen. thru EMckt38-40-42");
     break;
 
    case 6:
