@@ -88,7 +88,7 @@ long genPowerProcess (struct genSubRecord *psr) {
     break;
 
    case 3:
-    strcpy(psr->vala, "323: open 10CON");
+    strcpy(psr->vala, "323: Stop AHUs");
     break;
 
    case 4:
@@ -104,7 +104,7 @@ long genPowerProcess (struct genSubRecord *psr) {
     break;
 
    case 7:
-    strcpy(psr->vala, "327: UPS-1 on generator, interlock ECS");
+    strcpy(psr->vala, "327: ATS-3 switching to Normal");
     break;
 
    case 8:
