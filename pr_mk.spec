@@ -34,7 +34,7 @@ BuildRequires: tdct
 BuildRequires: epics-base-devel = 7.0.7-0.git.16f5056.el8
 BuildRequires: sequencer-devel  = 2.2.9.e5e3615-4.git.3d01cdb.el8
 BuildRequires: geminiRec-devel  = 4.1.13-3.git.75a1b03.el8
-BuildRequires: enetPLC5-devel   = 2.1.12-2.git.c56e5e3.el8
+BuildRequires: enetPLC5-devel   = 2.1.12-2.git.c7b8692.el8
 BuildRequires: pvload-devel     = 1.2.1-7.git.a9b856d.el8
 ## No runtime Requires on the main package.
 ## The artifacts shipped here are cross-compiled for the VME target
@@ -57,7 +57,7 @@ Requires: tdct
 Requires: epics-base-devel = 7.0.7-0.git.16f5056.el8
 Requires: sequencer-devel  = 2.2.9.e5e3615-4.git.3d01cdb.el8
 Requires: geminiRec-devel  = 4.1.13-3.git.75a1b03.el8
-Requires: enetPLC5-devel   = 2.1.12-2.git.c56e5e3.el8
+Requires: enetPLC5-devel   = 2.1.12-2.git.c7b8692.el8
 Requires: pvload-devel     = 1.2.1-7.git.a9b856d.el8
 
 %description devel
