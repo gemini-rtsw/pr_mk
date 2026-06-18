@@ -31,11 +31,11 @@ Prefix: %{_prefix}
 ## IOC dbd (pr-mk-IOC.dbd) pulls in pvload.dbd.
 BuildRequires: re2c
 BuildRequires: tdct
-BuildRequires: epics-base-devel = 7.0.7-0.git.1159d86%{?dist}
-BuildRequires: sequencer-devel  = 2.2.9.e5e3615-4.git.cc55bbd%{?dist}
-BuildRequires: geminiRec-devel  = 4.1.13-3.git.b85c7fe%{?dist}
-BuildRequires: enetPLC5-devel   = 2.1.12-2.git.a1ad1b2%{?dist}
-BuildRequires: pvload-devel     = 1.2.1-7.git.784d4d3%{?dist}
+BuildRequires: epics-base-devel = 7.0.7-0.git.f9e3717%{?dist}
+BuildRequires: sequencer-devel  = 2.2.9.e5e3615-4.git.7b11f25%{?dist}
+BuildRequires: geminiRec-devel  = 4.1.13-3.git.6f58677%{?dist}
+BuildRequires: enetPLC5-devel   = 2.1.12-2.git.409f303%{?dist}
+BuildRequires: pvload-devel     = 1.2.1-7.git.6df46ce%{?dist}
 ## No runtime Requires on the main package.
 ## The artifacts shipped here are cross-compiled for the VME target
 ## (RTEMS-mvme2700) and are network-booted by the board; nothing in this
@@ -54,11 +54,11 @@ Summary: Development files for %{name}
 Group: Development/Libraries
 Requires: %{name} = %{version}-%{release}
 Requires: tdct
-Requires: epics-base-devel = 7.0.7-0.git.1159d86%{?dist}
-Requires: sequencer-devel  = 2.2.9.e5e3615-4.git.cc55bbd%{?dist}
-Requires: geminiRec-devel  = 4.1.13-3.git.b85c7fe%{?dist}
-Requires: enetPLC5-devel   = 2.1.12-2.git.a1ad1b2%{?dist}
-Requires: pvload-devel     = 1.2.1-7.git.784d4d3%{?dist}
+Requires: epics-base-devel = 7.0.7-0.git.f9e3717%{?dist}
+Requires: sequencer-devel  = 2.2.9.e5e3615-4.git.7b11f25%{?dist}
+Requires: geminiRec-devel  = 4.1.13-3.git.6f58677%{?dist}
+Requires: enetPLC5-devel   = 2.1.12-2.git.409f303%{?dist}
+Requires: pvload-devel     = 1.2.1-7.git.6df46ce%{?dist}
 
 %description devel
 Development files for %{name} EPICS IOC.
